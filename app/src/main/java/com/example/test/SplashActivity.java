@@ -8,12 +8,13 @@ import android.os.Handler;
 
 public class SplashActivity extends AppCompatActivity {
     private static int SPLASH_TIME_OUT = 5000;
+    DbManager dbManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-        new DbManager(this);
+        dbManager = new DbManager(this);
         //start main activity
         new Handler().postDelayed(new Runnable() {
             @Override
